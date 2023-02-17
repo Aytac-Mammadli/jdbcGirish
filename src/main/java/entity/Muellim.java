@@ -8,6 +8,10 @@ public class Muellim {
     private Double maas;
     private String phone;
 
+    public Muellim(String fullName) {
+        this.fullName = fullName;
+    }
+
     public Muellim(int id, String fullName, String tevellud, String ise_giris, Double maas, String phone) {
         Id = id;
         this.fullName = fullName;

@@ -1,3 +1,4 @@
+import entity.Muellim;
 import entity.Telebe;
 import manager.MuellimManager;
 
@@ -11,9 +12,13 @@ public class Main {
 
         MuellimManager manager = new MuellimManager();
 
-        manager.deleteEntityById(7);
+        System.out.println(manager.getAll());
+
+
+        manager.updateEntity(6,new Muellim("Memmedli"));
 
         System.out.println(manager.getAll());
+
 
     }
 }

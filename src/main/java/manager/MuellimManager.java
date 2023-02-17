@@ -55,9 +55,11 @@ public class MuellimManager implements DatabaseService<Muellim> {
     @Override
     public void updateEntity(int id, Muellim newEntity) throws SQLException {
         PreparedStatement statement = connection
-                .prepareStatement("update muellim set fullName = ? where id  = ?");
+                .prepareStatement("update muellim set fullName = ?, phone = ?, maas=? where id  = ?");
         statement.setString(1,newEntity.getFullName());
-        statement.setInt(2,id);
+        statement.setString(2,newEntity.getPhone());
+        statement.setDouble(3,newEntity.isMaas());
+        statement.setInt(4,id);
         statement.executeUpdate();
     }
 
